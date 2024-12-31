@@ -58,11 +58,11 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.modal {
+.book-dialog {
 
 }
 
-#book-form {
+.book-form {
 
 }
 
@@ -70,6 +70,13 @@ h1 {
 
 }
 
+.save-book {
+
+}
+
+.cancel-book {
+    
+}
 
 #library-container {
     display: grid;

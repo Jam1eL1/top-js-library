@@ -1,19 +1,19 @@
 const myLibrary = [];
-const modal = document.getElementById('modal');
-const addBook = document.getElementById('add-book');
-const saveBook = document.getElementById('save-book');
-const cancelModal = document.getElementById('cancel-modal');
+const bookDialog = document.getElementById('book-dialog');
+const addBookBtn = document.getElementById('add-book');
+const saveBookBtn = document.getElementById('save-book');
+const cancelBookBtn = document.getElementById('cancel-book');
 
-addBook.addEventListener('click', () => {
-    modal.showModal();
+addBookBtn.addEventListener('click', () => {
+    bookDialog.showModal();
 });
 
-saveBook.addEventListener('click', () => {
-    modal.close();
+saveBookBtn.addEventListener('click', () => {
+    bookDialog.close();
 });
 
-cancelModal.addEventListener('click', () => {
-    modal.close();
+cancelBookBtn.addEventListener('click', () => {
+    bookDialog.close();
 });
 
 
