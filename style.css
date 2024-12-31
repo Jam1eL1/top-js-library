@@ -1,3 +1,25 @@
+:root {
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--secondary-font);
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #2c3e50;
+    margin: 2rem 0;
+}
+
 #library-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -13,11 +35,16 @@
 }
 
 .book-card h3 {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 1.25rem;
     margin-top: 0;
-    color: #333;
+    color: #2c3e50;
 }
 
 .book-card p {
+    font-family: var(--secondary-font);
+    font-size: 0.95rem;
     margin: 5px 0;
     color: #666;
 }
