@@ -34,28 +34,17 @@
 
                     <div class="form-group">
                         <label for="read-status"></label>
-                        <div class="raido-group">
+                        <div class="radio-group">
                             <input type="radio" id="read-yes" name="read-status" value="yes">
                             <label for="read-yes">Read</label>
                             <input type="radio" id="read-no" name="read-status" value="no">
-                            <label for="red-no">Nor Read</label>
+                            <label for="red-no">Not Read</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Rating:</label>
-                        <div class="star-rating">
-                            <input type="radio" id="star5" name="rating" value="5">
-                            <label for="star5">★</label>
-                            <input type="radio" id="star4" name="rating" value="4">
-                            <label for="star4">★</label>
-                            <input type="radio" id="star3" name="rating" value="3">
-                            <label for="star3">★</label>
-                            <input type="radio" id="star2" name="rating" value="2">
-                            <label for="star2">★</label>
-                            <input type="radio" id="star1" name="rating" value="1">
-                            <label for="star1">★</label>
-                        </div>
+                        <label for="book-rating">Rating:</label>
+                        <input type="number" id="book-rating" name="rating" required>
                     </div>
             </form>
             <button class="save-book" id="save-book" type="button" aria-label="Save new book">Save</button>
