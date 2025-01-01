@@ -3,18 +3,16 @@ const bookDialog = document.getElementById('book-dialog');
 const addBookBtn = document.getElementById('add-book');
 const saveBookBtn = document.getElementById('save-book');
 const cancelBookBtn = document.getElementById('cancel-book');
-
+const bookForm = document.getElementById('book-form');
+bookForm.addEventListener('submit')
 addBookBtn.addEventListener('click', () => {
     bookDialog.showModal();
-});
-
-saveBookBtn.addEventListener('click', () => {
-    bookDialog.close();
 });
 
 cancelBookBtn.addEventListener('click', () => {
     bookDialog.close();
 });
+
 
 
 function Book(title, author, pages, read, ratings) {
@@ -26,7 +24,7 @@ function Book(title, author, pages, read, ratings) {
 }
 
 function addNewBook() {
-    
+
 }
 
 function addBookToLibrary(book) {
