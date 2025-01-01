@@ -25,6 +25,10 @@ function Book(title, author, pages, read, ratings) {
   this.ratings = ratings;
 }
 
+function addNewBook() {
+    
+}
+
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
