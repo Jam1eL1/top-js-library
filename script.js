@@ -1,4 +1,5 @@
 const myLibrary = [];
+
 const bookDialog = document.getElementById('book-dialog');
 const addBookBtn = document.getElementById('add-book');
 const saveBookBtn = document.getElementById('save-book');
@@ -12,15 +13,7 @@ bookForm.addEventListener('submit', (event) => {
     const pages = document.getElementById('book-pages').value;
     const readStatus = document.querySelector('input[name="read-status"]:checked').value;
     const rating = document.getElementById('book-rating').value;
-
-    console.log({
-        title,
-        author,
-        pages,
-        readStatus,
-        rating
-    });
-}); 
+    }); 
 
 addBookBtn.addEventListener('click', () => {
     bookDialog.showModal();
@@ -32,12 +25,14 @@ cancelBookBtn.addEventListener('click', () => {
 
 
 
-function Book(title, author, pages, read, ratings) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.ratings = ratings;
+class Book {
+    constructor(title, author, pages, readStatus, ratings) {
+    this.title = title;
+    this.author = author;
+    this.pages = Number(pages);
+    this.readStatus = readStatus;
+    this.ratings = Number(ratings);
+}
 }
 
 // function addNewBook() {
@@ -59,15 +54,16 @@ function displayBooks() {
             <h3>${book.title}</h3>
             <p>By: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
-            <p>Read: ${book.read}</p>
+            <p>Read: ${book.readStatus}</p>
             <p>Rating: ${book.ratings}</p>
         `;
         libraryContainer.appendChild(bookCard);
     });  
 }
-// test
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', '700','Y', 4.5));
-addBookToLibrary(new Book('1984', 'George Orwell', '200', 'N', 4.8));
-addBookToLibrary(new Book('Pride and Prejudice', 'Jane Austen', '1000', 'Y', 4.7));
 
-
+myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, "Read", 5));
+myLibrary.push(new Book("1984", "George Orwell", 328, "Read", 4));
+myLibrary.push(new Book("Pride and Prejudice", "Jane Austen", 432, "Not Read", 0));
+myLibrary.push(new Book("Dune", "Frank Herbert", 412, "Reading", 4));
+myLibrary.push(new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, "Read", 3));
+displayBooks();
