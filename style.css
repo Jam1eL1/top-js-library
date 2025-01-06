@@ -59,11 +59,12 @@ h1 {
 }
 
 .book-dialog {
+    background-color: #f3f4f6;
     max-width: 50ch;
     min-width: 30ch;
     min-height: 30ch;
     margin: auto;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     border-radius: 5px;
     border: 0;
     box-shadow:
@@ -72,16 +73,34 @@ h1 {
 }
 
 .book-dialog::backdrop {
-    background: linear-gradient(45deg, rgb(255, 71, 160), rgb(25, 247, 192));
+    background: linear-gradient(to right, #6b5bca, #d5006d);
     opacity: 0.7;
 }
 
 .book-form {
-
+    
 }
 
 .form-group {
+    margin-bottom: 16px;
+}
 
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4a90e2; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+.radio-group {
+    display: flex; /* Align radio buttons in a row */
+    gap: 1rem; /* Space between radio buttons */
+}
+
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 12px;
 }
 
 .save-book {

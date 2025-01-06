@@ -1,13 +1,12 @@
 const myLibrary = [];
-
 const bookDialog = document.getElementById('book-dialog');
 const addBookBtn = document.getElementById('add-book');
 const saveBookBtn = document.getElementById('save-book');
 const cancelBookBtn = document.getElementById('cancel-book');
 const bookForm = document.getElementById('book-form');
 
-
 addBookBtn.addEventListener('click', () => {
+    bookDialog.classList.add('open');
     bookDialog.showModal();
 });
 
@@ -28,8 +27,6 @@ bookForm.addEventListener('submit', (event) => {
 cancelBookBtn.addEventListener('click', () => {
     bookDialog.close();
 });
-
-
 
 class Book {
     constructor(title, author, pages, readStatus, ratings) {
