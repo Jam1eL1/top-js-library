@@ -55,6 +55,7 @@ function displayBooks() {
             <p>Pages: ${book.pages}</p>
             <p>Read: ${book.readStatus}</p>
             <p>Rating: ${book.ratings}</p>
+            <button class="delete-book">x</button>
         `;
     libraryContainer.appendChild(bookCard);
   });
