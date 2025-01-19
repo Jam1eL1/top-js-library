@@ -11,6 +11,8 @@ addBookBtn.addEventListener('click', () => {
   bookDialog.showModal();
 });
 
+
+
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.getElementById('book-title').value;
@@ -60,6 +62,10 @@ function displayBooks() {
     libraryContainer.appendChild(bookCard);
   });
 }
+
+deleteBookBtn.addEventListener('click', (event) => {
+  console.log(`Show the book info you wish to delete ${event}`);
+});
 
 myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, "Read", 5));
 myLibrary.push(new Book("1984", "George Orwell", 328, "Read", 4));
