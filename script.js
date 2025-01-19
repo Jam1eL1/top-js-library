@@ -3,6 +3,7 @@ const bookDialog = document.getElementById('book-dialog');
 const addBookBtn = document.getElementById('add-book');
 const saveBookBtn = document.getElementById('save-book');
 const cancelBookBtn = document.getElementById('cancel-book');
+const deleteBookBtn = document.getElementById('delete-book');
 const bookForm = document.getElementById('book-form');
 
 addBookBtn.addEventListener('click', () => {
@@ -17,7 +18,6 @@ bookForm.addEventListener('submit', (event) => {
   const pages = document.getElementById('book-pages').value;
   const readStatus = document.querySelector('input[name="read-status"]:checked').value;
   const rating = document.getElementById('book-rating').value;
-
   const newBook = new Book(title, author, pages, readStatus, rating);
   addBookToLibrary(newBook);
   displayBooks();
@@ -55,7 +55,7 @@ function displayBooks() {
             <p>Pages: ${book.pages}</p>
             <p>Read: ${book.readStatus}</p>
             <p>Rating: ${book.ratings}</p>
-            <button class="delete-book">x</button>
+            <button id="delete-book" class="btn-delete-book">x</button>
         `;
     libraryContainer.appendChild(bookCard);
   });
