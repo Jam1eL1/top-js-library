@@ -3,15 +3,12 @@ const bookDialog = document.getElementById('book-dialog');
 const addBookBtn = document.getElementById('add-book');
 const saveBookBtn = document.getElementById('save-book');
 const cancelBookBtn = document.getElementById('cancel-book');
-const deleteBookBtn = document.getElementById('delete-book');
 const bookForm = document.getElementById('book-form');
 
 addBookBtn.addEventListener('click', () => {
   bookDialog.classList.add('open');
   bookDialog.showModal();
 });
-
-
 
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -48,24 +45,33 @@ function displayBooks() {
   const libraryContainer = document.getElementById('library-container');
   libraryContainer.innerHTML = '';
 
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index) => {
     const bookCard = document.createElement('div');
     bookCard.classList.add('book-card');
     bookCard.innerHTML = `
-            <h3>${book.title}</h3>
-            <p>By: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <p>Read: ${book.readStatus}</p>
-            <p>Rating: ${book.ratings}</p>
-            <button id="delete-book" class="btn-delete-book">x</button>
-        `;
+      <h3>${book.title}</h3>
+      <p>By: ${book.author}</p>
+      <p>Pages: ${book.pages}</p>
+      <p>Read: ${book.readStatus}</p>
+      <p>Rating: ${book.ratings}</p>
+      <button class="btn-delete-book" data-index="${index}">x</button>
+    `;
     libraryContainer.appendChild(bookCard);
   });
-}
 
-deleteBookBtn.addEventListener('click', (event) => {
-  console.log(`Show the book info you wish to delete ${event}`);
-});
+  // add event listener to the delete?
+  const deleteBookBtns = document.querySelectorAll('.btn-delete-book');
+  // when each button is clicked, it should remove that index from the library
+  deleteBookBtns.forEach((button) => {
+    button.addEventListener('click',(event) => {
+      const index = button.getAttribute('data-index');
+      console.log(`${index}`);
+      // when an array given, what is the best way to remove - update the array
+      myLibrary.splice(index, 1);
+      displayBooks();
+    })
+  });
+}
 
 myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, "Read", 5));
 myLibrary.push(new Book("1984", "George Orwell", 328, "Read", 4));
